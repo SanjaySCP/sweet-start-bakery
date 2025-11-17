@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useRef, useState } from "react";
-import { Award, Heart, Sparkles, Star, MapPin, Phone, Mail } from "lucide-react";
+import { Award, Heart, Sparkles, Star, MapPin, Phone, Mail, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroCake from "@/assets/hero-cake.jpg";
 import chocolateCake from "@/assets/chocolate-cake.jpg";
 import vanillaCake from "@/assets/vanilla-cake.jpg";
@@ -59,6 +60,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      {/* Demo Link Button */}
+      <Link to="/demo">
+        <Button
+          variant="outline"
+          className="fixed bottom-6 right-6 z-50 backdrop-blur-sm bg-primary/10 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 shadow-elegant animate-pulse-glow"
+        >
+          <Zap className="mr-2 h-4 w-4" />
+          View Demo Site
+        </Button>
+      </Link>
+
       {/* Hero Section - Mobile Optimized */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -72,23 +84,23 @@ const Index = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center text-white">
           <div className="animate-fade-in-up">
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight hover:scale-105 transition-transform duration-500">
               Cakes and Tales
             </h1>
-            <p className="text-lg sm:text-2xl md:text-3xl mb-6 sm:mb-8 font-light tracking-wide px-4">
+            <p className="text-lg sm:text-2xl md:text-3xl mb-6 sm:mb-8 font-light tracking-wide px-4 animate-fade-in animation-delay-300">
               Where Every Cake Tells a Story
             </p>
-            <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-4">
+            <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-4 animate-fade-in animation-delay-500">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full transition-all duration-300 hover:scale-105 shadow-elegant w-full sm:w-auto"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-elegant shadow-soft w-full sm:w-auto group"
               >
-                Explore Our Collection
+                <span className="group-hover:animate-shimmer">Explore Our Collection</span>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-foreground text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full transition-all duration-300 w-full sm:w-auto"
+                className="border-2 border-white text-white hover:bg-white hover:text-foreground text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full transition-all duration-300 hover:scale-110 w-full sm:w-auto"
               >
                 Contact Us
               </Button>
